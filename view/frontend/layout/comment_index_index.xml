@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * © MageToday.
+ * Friend's developing 
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd" layout="1column">
+    <body>
+        <referenceContainer name="content">
+            <block class="MageToday\Comment\Block\CommentForm" name="commentForm" template="MageToday_Comment::form.phtml">
+                <container name="form.additional.info" label="Form Additional Info"/>
+            </block>
+            <block class="MageToday\Comment\Block\CommentList" name="commentList" template="MageToday_Comment::list.phtml" cacheable="false" />
+        </referenceContainer>
+    </body>
+</page>

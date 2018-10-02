@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * © MageToday.
+ * Friend's developing 
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <route method="GET" url="/V1/comment/:id">
+        <service class="MageToday\Comment\Api\CommentRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

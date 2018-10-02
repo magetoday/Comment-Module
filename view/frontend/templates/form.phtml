@@ -1,0 +1,50 @@
+<?php
+/**
+ * © MageToday.
+ * Friend's developing 
+ */
+
+// @codingStandardsIgnoreFile
+/** @var \MageToday\Comment\Block\CommentForm $block */
+?>
+
+<form class="form comment"
+      action="<?= $block->escapeUrl($block->getFormAction()) ?>"
+      id="comment-form"
+      method="post"
+      data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>"
+      data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?= $block->escapeHtml(__('Comment Us')) ?></span></legend><br />
+        <div class="field email required">
+            <label class="label" for="email"><span><?= $block->escapeHtml(__('Email')) ?></span></label>
+            <div class="control">
+                <input name="email" id="email" title="<?= $block->escapeHtmlAttr(__('Email')) ?>" value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('email') ?: $this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+            </div>
+        </div>
+        <div class="field rating">
+            <label class="label" for="rating"><span><?= $block->escapeHtml(__('Rating')) ?></span></label>
+            <div class="control stars">
+                <?php foreach ([1,2,3,4,5] as $star): ?>
+                    <input type="radio" name="rating" id="<?=  $block->escapeHtmlAttr($star) ?>" value="<?= $block->escapeHtmlAttr($star) ?>" <?php if ($star == 5): ?>checked="checked"<?php endif; ?> />
+                    <label for="<?= $block->escapeHtmlAttr($star) ?>"><?= $block->escapeHtml($star) ?></label>
+                <?php endforeach ?>
+            </div>
+        </div>
+        <div class="field comment required">
+            <label class="label" for="comment"><span><?= $block->escapeHtml(__('What’s on your mind?')) ?></span></label>
+            <div class="control">
+                <textarea name="comment" id="comment" title="<?= $block->escapeHtmlAttr(__('What’s on your mind?')) ?>" class="input-text" cols="5" rows="3" data-validate="{required:true}"><?= $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('comment')) ?></textarea>
+            </div>
+        </div>
+        <?= $block->getChildHtml('form.additional.info') ?>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <input type="hidden" name="hideit" id="hideit" value="" />
+            <button type="submit" title="<?= $block->escapeHtmlAttr(__('Submit')) ?>" class="action submit primary">
+                <span><?= $block->escapeHtml(__('Submit')) ?></span>
+            </button>
+        </div>
+    </div>
+</form>

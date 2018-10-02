@@ -1,0 +1,29 @@
+<?php
+/**
+ * © MageToday.
+ * Friend's developing 
+ */
+
+// @codingStandardsIgnoreFile
+/** @var \MageToday\Comment\Block\CommentList $block */
+?>
+
+<div class="comments grid comments-grid">
+ 	<ol class="comment-items">
+	<?php foreach ($block->getComments() as $comment): ?>
+		<li class="item"> 
+			<div>
+				<h5>
+					<?= $block->escapeHtml($comment->getEmail())  ?>
+				</h5>
+				<p><?= $block->escapeHtml($comment->getRating()) ?></p>
+				<p><?= $block->escapeHtml($comment->getComment()) ?></p>
+			</div>
+		</li>	
+	<?php endforeach ?>
+	</ol>
+</div>
+<!-- Uhuu -->
+<script type="text/x-magento-init">
+{"[data-role=comment-list]": {"Magento_Ui/js/core/app": <?= /* @escapeNotVerified */ $block->getJsLayout() ?>}}
+</script>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * © MageToday.
+ * Friend's developing 
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="comment" frontName="comment">
+            <module name="MageToday_Comment" />
+        </route>
+    </router>
+</config>
