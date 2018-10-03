@@ -1,0 +1,28 @@
+{
+  "name": "magetoday/comment",
+  "description": "Study Magento 2 - Basic CRUD - go increment",
+  "type": "magento2-module",
+  "license": [
+    "MIT"
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://repo.magento.com/"
+    }
+  ],
+  "keywords": [
+    "Study",
+    "Magento2",
+    "Basic",
+    "CRUD"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "MageToday\\Comment\\": ""
+    }
+  }
+}
